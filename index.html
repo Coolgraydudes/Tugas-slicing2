@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @custom-variant dark (&:where(.dark, .dark *));
+    </style>
+  </head>
+
+  <body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav
+      class="sticky top-0 z-50 relative border-b border-white/20 dark:border-slate-950 bg-[#043873] dark:bg-slate-950 transition-colors duration-500">
+
+      <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+
+        <!-- Logo -->
+        <img
+          src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/Logo.png?raw=true"
+          alt="Whitepace"
+          class="h-8">
+
+        <!-- Desktop Menu -->
+        <ul class="hidden items-center gap-8 text-sm text-white lg:flex">
+
+          <li>
+            <a href="#" class="flex items-center gap-1 transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Products
+              <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="flex items-center gap-1 transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Solutions
+              <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="flex items-center gap-1 transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Resources
+              <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="flex items-center gap-1 transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Pricing
+              <svg class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </a>
+          </li>
+
+        </ul>
+
+        <!-- Desktop Buttons -->
+        <div class="hidden items-center gap-4 lg:flex">
+
+          <button
+            class="rounded-lg bg-[#FFE492] dark:bg-[#FACC15] px-6 py-3 font-medium text-[#043873] dark:text-slate-900 transition-all duration-300 hover:bg-yellow-300">
+            Login
+          </button>
+
+          <button
+            class="flex items-center gap-2 rounded-lg bg-[#4F9CF9] dark:bg-blue-600 px-6 py-3 text-white transition-all duration-300 hover:bg-blue-500 dark:hover:bg-blue-400">
+            Try Whitepace free
+
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+
+          </button>
+
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button
+          class="relative flex h-8 w-8 items-center justify-center text-white lg:hidden"
+          id="menu-btn">
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="icon-menu"
+            class="absolute inset-0 h-8 w-8 opacity-100 rotate-0 scale-100 transition-all duration-700 ease-in-out"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+
+          </svg>
+
+          <svg
+            id="icon-close"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute inset-0 h-8 w-8 opacity-0 rotate-90 scale-75 transition-all duration-700 ease-in-out"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M18 6l-12 12"/>
+            <path d="M6 6l12 12"/>
+
+          </svg>
+
+        </button>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="absolute left-0 top-20 w-full overflow-hidden max-h-0 opacity-0 -translate-y-3 border-t border-white/20 dark:border-slate-700 bg-[#043873] dark:bg-[#8B6B00] shadow-2xl transition-all duration-500 ease-in-out">
+          <ul class="flex flex-col text-white">
+
+            <li><a href="#" class="block px-6 py-3 transition-colors hover:bg-white/10">Products</a></li>
+            <li><a href="#" class="block px-6 py-3 transition-colors hover:bg-white/10">Solutions</a></li>
+            <li><a href="#" class="block px-6 py-3 transition-colors hover:bg-white/10">Resources</a></li>
+            <li><a href="#" class="block px-6 py-3 transition-colors hover:bg-white/10">Pricing</a></li>
+
+            <li class="px-6 py-3">
+              <button
+                class="w-full rounded-lg bg-[#FFE492] dark:bg-[#FACC15] py-3 text-[#043873] dark:text-slate-900 transition-all duration-300 hover:bg-yellow-300 dark:hover:bg-[#FACC15]">
+                Login
+              </button>
+            </li>
+
+            <li class="px-6 py-3">
+              <button
+                class="w-full rounded-lg bg-[#4F9CF9] dark:bg-[#3B82F6] py-3 text-white transition-all duration-300 hover:bg-blue-500 dark:hover:bg-blue-400">
+                Try Whitepace free
+              </button>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- ================= HERO ================= -->
+    <section class="bg-[#043873] dark:bg-slate-950 transition-colors duration-500 py-16 lg:min-h-[89vh] lg:py-20">
+
+      <div class="mx-auto flex pt-16 max-w-7xl flex-col items-center gap-14 px-6 text-center lg:flex-row lg:justify-between lg:text-left">
+
+        <!-- Left -->
+        <div class="max-w-xl">
+
+          <h1 class="text-4xl font-bold leading-tight text-white dark:text-slate-100 lg:text-6xl">
+            Get More Done with whitepace
+          </h1>
+
+          <p class="mt-6 text-lg leading-8 text-white/80 dark:text-slate-400">
+            Project management software that enables your teams to collaborate,
+            plan, analyze and manage everyday tasks.
+          </p>
+
+          <div class="mt-8 flex justify-center lg:justify-start">
+            <button
+              class="rounded-lg bg-[#4F9CF9] dark:bg-blue-600 px-8 py-4 text-white transition hover:bg-blue-500 dark:hover:bg-blue-500">
+              Try Whitepace free
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right -->
+        <div class="flex w-full justify-center lg:justify-end">
+
+          <img
+            src="https://i.pinimg.com/736x/49/8d/a9/498da98900f749523512fce85f244c1e.jpg"
+            alt="Hero Image"
+            class="w-full max-w-[550px] rounded-lg object-cover transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl">
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= PROJECT MANAGEMENT ================= -->
+
+    <section class="bg-white dark:bg-slate-900 transition-colors duration-500 py-20 lg:min-h-[100vh] lg:pt-52">
+
+      <div class="mx-auto flex max-w-7xl flex-col items-center gap-16 px-6 lg:flex-row">
+
+        <!-- Left -->
+        <div class="flex-1 text-center lg:text-left">
+
+          <h2 class="text-4xl font-bold leading-tight text-[#212529] dark:text-white lg:text-6xl">
+            Project <br class="hidden lg:block">
+            Management
+          </h2>
+
+          <p class="mt-6 leading-8 text-gray-600 dark:text-slate-400">
+            Images, videos, PDFs and audio files are supported.
+            Create math expressions and diagrams directly from the app.
+            Take photos with the mobile app and save them to a note.
+          </p>
+
+          <div class="mt-10 flex justify-center lg:justify-start">
+            <button
+              class="rounded-lg bg-[#4F9CF9] dark:bg-blue-600 px-8 py-4 text-white transition hover:bg-blue-500 dark:hover:bg-blue-500">
+              Get Started
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right -->
+        <div class="flex flex-1 justify-center">
+
+          <img
+            src="img/wq.jpg"
+            alt="Project Management"
+            class="w-full max-w-[600px] rounded-lg object-cover">
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- ================= WORK TOGETHER ================= -->
+
+    <section class="bg-white dark:bg-slate-900 transition-colors duration-500 py-20 lg:min-h-[100vh]">
+
+      <div class="mx-auto flex max-w-7xl flex-col-reverse items-center gap-16 px-6 lg:flex-row lg:py-52">
+
+        <!-- Left -->
+        <div class="flex flex-1 justify-center">
+
+          <img
+            src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/Work%20Together%20Image.png?raw=true"
+            alt="Project Management"
+            class="w-full max-w-[600px] rounded-lg object-cover">
+
+        </div>
+
+        <!-- Right -->
+        <div class="flex-1 text-center lg:text-left">
+
+          <h2 class="text-4xl font-bold leading-tight text-[#212529] dark:text-white lg:text-6xl">
+            Work together
+          </h2>
+
+          <p class="mt-6 leading-8 text-gray-600 dark:text-slate-400">
+            With whitepace, share your notes with your colleagues and collaborate on them.
+            You can also publish a note to the internet and share the URL with others.
+          </p>
+
+          <div class="mt-10 flex justify-center lg:justify-start">
+            <button
+              class="rounded-lg bg-[#4F9CF9] dark:bg-blue-600 px-8 py-4 text-white transition hover:bg-blue-500 dark:hover:bg-blue-500">
+              Get Started
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= Use as Extension ================= -->
+
+    <section class="bg-[#043873] dark:bg-slate-950 transition-colors duration-500 py-20 lg:min-h-[100vh] lg:pt-52">
+
+      <div class="mx-auto flex max-w-7xl flex-col items-center gap-16 px-6 lg:flex-row">
+
+        <!-- Left -->
+        <div class="flex-1 text-center lg:text-left">
+
+          <h2 class="text-4xl font-bold leading-tight text-white dark:text-slate-100 lg:text-6xl">
+            Use as Extension
+          </h2>
+
+          <p class="mt-6 leading-8 text-white dark:text-slate-400">
+            Use the web clipper extension, available on Chrome and Firefox, to save web pages or take screenshots as notes.
+          </p>
+
+          <div class="mt-10 flex justify-center lg:justify-start">
+            <button
+              class="rounded-lg bg-[#4F9CF9] dark:bg-blue-600 px-8 py-4 text-white transition hover:bg-blue-500 dark:hover:bg-blue-500">
+              Get Started
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right -->
+        <div class="flex flex-1 justify-center">
+
+          <img
+            src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/qw.jpg?raw=true"
+            alt="Project Management"
+            class="w-full max-w-[600px] rounded-lg object-cover">
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- ================= OUR SPONSORS ================= -->
+
+    <section class="bg-white dark:bg-slate-900 transition-colors duration-500 py-32">
+
+      <div class="mx-auto max-w-7xl px-6">
+
+        <!-- Title -->
+        <h2 class="text-center text-4xl font-bold text-[#212529] dark:text-white lg:text-6xl">
+          Our <u>Sponsors</u>
+        </h2>
+
+        <!-- Logos -->
+        <div class="mt-16 grid grid-cols-1 place-items-center gap-20 lg:grid-cols-4 lg:gap-12">
+
+          <img
+            src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/Apple.png?raw=true"
+            alt="Apple"
+            class="h-12 w-auto object-contain transition duration-300 dark:brightness-90 dark:hover:brightness-110">
+
+          <img
+            src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/Microsoft.png?raw=true"
+            alt="Microsoft"
+            class="h-12 w-auto object-contain transition duration-300 dark:brightness-90 dark:hover:brightness-110">
+
+          <img
+            src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/Slack.png?raw=true"
+            alt="Slack"
+            class="h-12 w-auto object-contain transition duration-300 dark:brightness-90 dark:hover:brightness-110">
+
+          <img
+            src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/Google.png?raw=true"
+            alt="Google"
+            class="h-12 w-auto object-contain transition duration-300 dark:brightness-90 dark:hover:brightness-110">
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= CTA ================= -->
+
+    <section class="bg-[#043873] dark:bg-slate-950 transition-colors duration-500 py-20">
+
+      <div class="mx-auto max-w-7xl px-6">
+
+        <div class="mx-auto max-w-md lg:max-w-2xl">
+
+          <!-- Title -->
+          <h2 class="text-left text-4xl font-bold leading-tight text-white dark:text-slate-100 lg:text-center lg:text-7xl">
+            Try Whitepace <br>
+            today
+          </h2>
+
+          <!-- Description -->
+          <p class="mt-6 text-left text-white/80 dark:text-slate-400 lg:text-center">
+            Get started for free.
+            <br>
+            Add your whole team as your needs grow.
+          </p>
+
+          <!-- Button -->
+          <div class="mt-8 flex justify-start lg:justify-center">
+            <button
+              class="rounded-lg bg-[#4F9CF9] dark:bg-blue-600 px-8 py-4 text-white transition hover:bg-blue-500 dark:hover:bg-blue-500">
+              Try Whitepace free
+            </button>
+          </div>
+
+          <!-- Contact -->
+          <p class="mt-8 text-left text-white dark:text-slate-300 lg:text-center">
+            On a big team? Contact sales
+          </p>
+
+          <!-- Icons -->
+          <div class="mt-8 flex justify-start gap-8 lg:justify-center">
+
+            <img
+              src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/apple-black-logo%202.png?raw=true"
+              class="h-10 w-auto transition duration-300 dark:brightness-90 dark:hover:brightness-110"
+              alt="Apple">
+
+            <img
+              src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/windows-logo%201.png?raw=true"
+              class="h-10 w-auto transition duration-300 dark:brightness-90 dark:hover:brightness-110"
+              alt="Windows">
+
+            <img
+              src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/android-logo%201.png?raw=true"
+              class="h-10 w-auto transition duration-300 dark:brightness-90 dark:hover:brightness-110"
+              alt="Android">
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#043873] dark:bg-slate-950 text-white transition-colors duration-500">
+
+  <div class="mx-auto max-w-7xl px-6 py-20">
+
+    <!-- Top Footer -->
+    <div class="flex flex-col gap-12 lg:flex-row lg:justify-between">
+
+      <!-- Logo -->
+      <div class="max-w-xs">
+        <img
+          src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/Logo.png?raw=true"
+          alt="Whitepace"
+          class="h-8">
+
+        <p class="mt-6 text-sm leading-7 text-white/80 dark:text-slate-300 transition-colors duration-500">
+          Whitepace was created for the new ways we live and work.
+          We make a better workspace around the world.
+        </p>
+      </div>
+
+      <!-- Product -->
+      <div>
+        <h3 class="mb-5 font-semibold text-white">
+          Product
+        </h3>
+
+        <ul class="space-y-3 text-sm text-white/80 dark:text-slate-300">
+
+          <li>
+            <a href="#" class="transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Overview
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Pricing
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Customer stories
+            </a>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+
+        <h3 class="mb-5 font-semibold text-white">
+          Resources
+        </h3>
+
+        <ul class="space-y-3 text-sm text-white/80 dark:text-slate-300">
+
+          <li>
+            <a href="#" class="transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Blog
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Guides & tutorials
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Help center
+            </a>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+
+        <h3 class="mb-5 font-semibold text-white">
+          Company
+        </h3>
+
+        <ul class="space-y-3 text-sm text-white/80 dark:text-slate-300">
+
+          <li>
+            <a href="#" class="transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              About us
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Careers
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="transition-colors hover:text-[#FFE492] dark:hover:text-[#60A5FA]">
+              Media kit
+            </a>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="max-w-xs">
+
+        <h3 class="text-2xl font-bold text-white">
+          Try It Today
+        </h3>
+
+        <p class="mt-4 text-sm leading-6 text-white/80 dark:text-slate-300 transition-colors duration-500">
+          Get started for free.
+          Add your whole team as your needs grow.
+        </p>
+
+        <button
+          class="mt-6 rounded-lg bg-[#4F9CF9] dark:bg-[#3B82F6] px-6 py-3 text-sm text-white transition-all duration-300 hover:bg-blue-500 dark:hover:bg-blue-400">
+          Start today
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="my-12 border-t border-white/20 dark:border-slate-700 transition-colors duration-500"></div>
+
+    <!-- Bottom Footer -->
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+
+      <!-- Left -->
+      <div class="flex flex-col gap-4 text-sm text-white/80 dark:text-slate-300 lg:flex-row lg:items-center lg:gap-8">
+
+        <a href="#" class="transition-colors hover:text-white dark:hover:text-[#60A5FA]">
+          English
+        </a>
+
+        <a href="#" class="transition-colors hover:text-white dark:hover:text-[#60A5FA]">
+          Terms & Privacy
+        </a>
+
+        <a href="#" class="transition-colors hover:text-white dark:hover:text-[#60A5FA]">
+          Security
+        </a>
+
+        <a href="#" class="transition-colors hover:text-white dark:hover:text-[#60A5FA]">
+          Status
+        </a>
+
+        <span>
+          ©2021 Whitepace LLC.
+        </span>
+
+      </div>
+
+      <!-- Right -->
+      <div class="flex items-center gap-6">
+
+        <a href="#" class="transition-transform hover:scale-110">
+          <img
+            src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/_x30_1._Facebook.png?raw=true"
+            alt="Facebook"
+            class="h-5">
+        </a>
+
+        <a href="#" class="transition-transform hover:scale-110">
+          <img
+            src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/Twitter.png?raw=true"
+            alt="Twitter"
+            class="h-5">
+        </a>
+
+        <a href="#" class="transition-transform hover:scale-110">
+          <img
+            src="https://github.com/Coolgraydudes/Project-React-Assets/blob/main/assets/media/Linkedin.png?raw=true"
+            alt="LinkedIn"
+            class="h-5">
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+</footer>
+
+      <button
+        id="theme-toggle"
+        class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-white shadow-2xl transition-all duration-300 hover:scale-110">
+
+        <svg
+          id="moon-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="absolute h-6 w-6 transition-all duration-500 ease-in-out opacity-100 rotate-0 scale-100 text-[#FFE492]">
+
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M12 1.992a10 10 0 1 0 9.236 13.838c.341-.82-.476-1.644-1.298-1.31a6.5 6.5 0 0 1-6.864-10.787l.077-.08c.551-.63.113-1.653-.758-1.653h-.266l-.068-.006-.06-.002z"/>
+
+        </svg>
+
+        <svg
+          id="sun-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="absolute h-6 w-6 transition-all duration-500 ease-in-out opacity-0 rotate-180 scale-50 text-[#FFE492]">
+
+          <path d="M12 18a6 6 0 100-12 6 6 0 000 12zm0-16v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/>
+
+        </svg>
+
+      </button>
+
+  </body>
+
+<script>
+  // ================= HAMBURGER MENU =================
+
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  const menuIcon = document.getElementById("icon-menu");
+  const closeIcon = document.getElementById("icon-close");
+
+  let isOpen = false;
+
+  function openMenu() {
+
+    mobileMenu.classList.remove("max-h-0", "opacity-0", "-translate-y-3");
+    mobileMenu.classList.add("max-h-[500px]", "opacity-100", "translate-y-0");
+
+    menuIcon.classList.remove("opacity-100", "rotate-0", "scale-100");
+    menuIcon.classList.add("opacity-0", "rotate-90", "scale-75");
+
+    closeIcon.classList.remove("opacity-0", "rotate-90", "scale-75");
+    closeIcon.classList.add("opacity-100", "rotate-0", "scale-100");
+
+    isOpen = true;
+  }
+
+  function closeMenu() {
+
+    mobileMenu.classList.remove("max-h-[500px]", "opacity-100", "translate-y-0");
+    mobileMenu.classList.add("max-h-0", "opacity-0", "-translate-y-3");
+
+    menuIcon.classList.remove("opacity-0", "rotate-90", "scale-75");
+    menuIcon.classList.add("opacity-100", "rotate-0", "scale-100");
+
+    closeIcon.classList.remove("opacity-100", "rotate-0", "scale-100");
+    closeIcon.classList.add("opacity-0", "rotate-90", "scale-75");
+
+    isOpen = false;
+  }
+
+  menuBtn.addEventListener("click", () => {
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024) {
+      closeMenu();
+    }
+  });
+
+  // ================= DARK MODE =================
+
+  const themeBtn = document.getElementById("theme-toggle");
+  const moonIcon = document.getElementById("moon-icon");
+  const sunIcon = document.getElementById("sun-icon");
+
+  function setTheme(isDark) {
+
+    document.documentElement.classList.toggle("dark", isDark);
+
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    if (isDark) {
+
+      // Moon keluar
+      moonIcon.classList.remove(
+        "opacity-100",
+        "rotate-0",
+        "scale-100"
+      );
+
+      moonIcon.classList.add(
+        "opacity-0",
+        "-rotate-180",
+        "scale-50"
+      );
+
+      // Sun masuk
+      sunIcon.classList.remove(
+        "opacity-0",
+        "rotate-180",
+        "scale-50"
+      );
+
+      sunIcon.classList.add(
+        "opacity-100",
+        "rotate-0",
+        "scale-100"
+      );
+
+    } else {
+
+      // Moon masuk
+      moonIcon.classList.remove(
+        "opacity-0",
+        "-rotate-180",
+        "scale-50"
+      );
+
+      moonIcon.classList.add(
+        "opacity-100",
+        "rotate-0",
+        "scale-100"
+      );
+
+      // Sun keluar
+      sunIcon.classList.remove(
+        "opacity-100",
+        "rotate-0",
+        "scale-100"
+      );
+
+      sunIcon.classList.add(
+        "opacity-0",
+        "rotate-180",
+        "scale-50"
+      );
+
+    }
+
+  }
+
+  // Load theme saat halaman dibuka
+  const savedTheme = localStorage.getItem("theme") === "dark";
+  setTheme(savedTheme);
+
+  // Toggle theme
+  themeBtn.addEventListener("click", () => {
+
+    const isDark = !document.documentElement.classList.contains("dark");
+
+    setTheme(isDark);
+
+  });
+
+</script>
+
+</html>
